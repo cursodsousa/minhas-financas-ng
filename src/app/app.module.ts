@@ -5,9 +5,11 @@ import { FormsModule } from '@angular/forms'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
-import { LoginService } from './login.service';
 
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { HomeComponent } from './home/home.component'
+import { AuthService } from './auth.service';
+import { NavbarComponent } from './navbar/navbar.component';
 
 const baseApiUrl:string = "https://minhas-financas-app.herokuapp.com/";
 
@@ -15,6 +17,8 @@ const baseApiUrl:string = "https://minhas-financas-app.herokuapp.com/";
   declarations: [
     AppComponent,
     LoginComponent,
+    HomeComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
@@ -23,7 +27,7 @@ const baseApiUrl:string = "https://minhas-financas-app.herokuapp.com/";
     FormsModule,
   ],
   providers: [ 
-    LoginService ,
+    AuthService ,
     { provide : 'baseApiUrl', useValue: baseApiUrl }
   ],
   bootstrap: [AppComponent]
